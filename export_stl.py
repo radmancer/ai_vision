@@ -1,9 +1,12 @@
 #This script will export all objects in the scene as an STL file.
 #In order for this script to properly function, Blender must be
-#opened via the terminal with ./Applications/blender.app/Content/MacOS/blender
+#opened via the terminal with ./Applications/blender.app/Contents/MacOS/blender
 #NOTE: It is not known yet if this script will work in Blender headless mode.
 import bpy
 import os
+
+bpy.ops.mesh.primitive_cube_add()
+bpy.ops.mesh.primitive_cube_add(location=(5,0,10))
 
 # get the current path and make a new folder for the exported meshes
 path = bpy.path.abspath('/Users/jamesmcdowell/Desktop/')
