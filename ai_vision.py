@@ -1,6 +1,23 @@
+from PIL import Image #osx way of importing Image
+#import Image
 ################################################################################
 #                                   Functions                                  #
 ################################################################################
+#This function is incomplete.
+#It needs to return or otherwise do something more
+#interesting than print the RGB values of each pixel.
+def TraverseImage(ImgName):
+    img = Image.open(ImgName)
+    ImgWidth = img.size[0]
+    ImgHeight = img.size[1]
+    #loaded image object into memory.
+    pixels = img.load()
+    for y in range(ImgHeight):
+        for x in range(ImgWidth):
+            #pixelColor = img.getpixel((x, y)) #the slow method.
+            pixelColor = pixels[x, y]
+            print pixelColor
+
 #Scans from left to right, top to bottom for pixels of a desired color,
 #once found, the pixel's coordinate is returned.
 def PixelScan(PixelColor):
@@ -253,3 +270,23 @@ def BoundingBoxTopRight():
         Y.append(HullStack[i][1])
 
     return (max(X), min(Y))
+
+def arcsin(n):
+    #converts n from degrees to radians
+    n = n * math.pi/180
+    return math.asin(n) * 180/math.pi
+
+def sin(n):
+    #converts n from degrees to radians
+    n = n * math.pi/180
+    return math.sin(n)
+
+def cos(n):
+    #converts n from degrees to radians
+    n = n * math.pi/180
+    return math.cos(n)
+
+def tan(n):
+    #converts n from degrees to radians
+    n = n * math.pi/180
+    return math.tan(n)
