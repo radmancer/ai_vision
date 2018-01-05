@@ -175,7 +175,7 @@ def main():
 #******************************
 
 gb = {}
-gb["TargetObject"] = "(1) Cube" # Object name
+gb["TargetObject"] = "(1) Cube.001" # Object name
 gb["MaxAroundDist"] = 0.1
 gb["MaxDistForAxis"] = 0.2
 gb["MaxAroundCount"] = 10
@@ -209,7 +209,7 @@ def SkinVerts():
 
     # Get mesh instance
     try:
-        object = bpy.data.objects["Cube"]
+        object = bpy.data.objects["Cube.001"]
         lcMesh = object.data
     except:
         raise AttributeError("Please specify the name of a Mesh object.")
