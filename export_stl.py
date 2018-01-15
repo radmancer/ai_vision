@@ -6,35 +6,13 @@ import bpy
 import bmesh
 import os
 
-#[start] make a cube
-#bpy.ops.mesh.primitive_cube_add()
-#bpy.ops.mesh.primitive_cube_add(location=(5,0,10))
-#[end] make a cube
-
-#[start] make a sphere
-#def makeMaterial(name, diffuse, specular, alpha):
-#    mat = bpy.data.materials.new(name)
-#    mat.diffuse_color = diffuse
-#    mat.diffuse_shader = 'LAMBERT'
-#    mat.diffuse_intensity = 1.0
-#    mat.specular_color = specular
-#    mat.specular_shader = 'COOKTORR'
-#    mat.specular_intensity = 0.5
-#    mat.alpha = alpha
-#    mat.ambient = 1
-#    return mat
-#def setMaterial(ob, mat):
-#    me = ob.data
-#    me.materials.append(mat)
-##cleaning the scene from http://wiki.blender.org/index.php/Dev:2.5/Py/Scripts/Cookbook/Code_snippets/Interface
-#bpy.ops.object.select_by_type(type='MESH')
-#bpy.ops.object.delete()
-#red = makeMaterial('Red',(1,0,0),(1,1,1),1)
-#origin = (0,0,0)
-#bpy.ops.mesh.primitive_uv_sphere_add(location=origin)
-#bpy.ops.transform.translate(value=(1,0,0))
-#setMaterial(bpy.context.object, red)
-#[end] make a sphere
+#Removes the camera and cube objects in the initial scene.
+bpy.ops.object.select_all(action='DESELECT')
+bpy.data.objects['Camera'].select = True
+bpy.ops.object.delete()
+bpy.ops.object.select_all(action='DESELECT')
+bpy.data.objects['Cube'].select = True
+bpy.ops.object.delete()
 
 #[start] make custom geometry
 verts = [(0, 0, 0), (1, 0, 0), (1, 1, 0), (0, 1, 0),  (0, 0, -1), (1, 0, -1), (1, 1, -1), (0, 1, -1)]  # 2 verts made with XYZ coords
